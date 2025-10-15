@@ -19,7 +19,6 @@ Sesuai dengan brief tugas, semua algoritma clustering utama (K-Means, DBSCAN) da
 3. [Instalasi & Cara Menjalankan](#instalasi--cara-menjalankan)
 4. [Metodologi](#metodologi)
 5. [Anggota Tim](#anggota-tim)
-6. [Checklist Deliverables](#checklist-deliverables)
 
 ---
 
@@ -105,7 +104,7 @@ Proyek ini mengikuti metodologi CRISP-DM yang mencakup:
 5. Deployment – Menyajikan hasil analisis dalam aplikasi Streamlit lengkap dengan insight & rencana aksi.
 
 ---
-### 👥 Anggota Tim
+### Anggota Tim
 
 | No | Nama Lengkap              | NPM          |
 |----|---------------------------|--------------|

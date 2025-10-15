@@ -15,12 +15,11 @@ Sesuai dengan brief tugas, semua algoritma clustering utama (K-Means, DBSCAN) da
 
 ### Daftar Isi
 1. [Fitur Utama](#fitur-utama)
-2. [Tampilan Aplikasi](#tampilan-aplikasi)
-3. [Struktur Proyek](#struktur-proyek)
-4. [Instalasi & Cara Menjalankan](#instalasi--cara-menjalankan)
-5. [Metodologi](#metodologi)
-6. [Anggota Tim](#anggota-tim)
-7. [Checklist Deliverables](#checklist-deliverables)
+2. [Struktur Proyek](#struktur-proyek)
+3. [Instalasi & Cara Menjalankan](#instalasi--cara-menjalankan)
+4. [Metodologi](#metodologi)
+5. [Anggota Tim](#anggota-tim)
+6. [Checklist Deliverables](#checklist-deliverables)
 
 ---
 
@@ -39,20 +38,8 @@ Sesuai dengan brief tugas, semua algoritma clustering utama (K-Means, DBSCAN) da
 
 ---
 
-### Tampilan Aplikasi
-
-![Screenshot Tampilan Utama Aplikasi](https://i.imgur.com/your-screenshot-1.png "Tampilan Utama Aplikasi")  
-_Gambar 1: Halaman utama visualisasi clustering._
-
-![Screenshot Hasil Analisis](https://i.imgur.com/your-screenshot-2.png "Hasil Analisis Cluster")  
-_Gambar 2: Contoh tabel profil cluster dan rencana aksi yang dihasilkan._
-
----
-
 ### Struktur Proyek
-
 Proyek ini diorganisir dengan struktur modular untuk memisahkan logika preprocessing, visualisasi, dan aplikasi utama.
-
 ```
 ├── Visualisasi/
 │ ├── ClusterInsight.py # Analisis profil & rekomendasi
@@ -73,3 +60,57 @@ Proyek ini diorganisir dengan struktur modular untuk memisahkan logika preproces
 ├── requirements.txt # Daftar library
 └── README.md # File dokumentasi ini
 ```
+
+---
+
+### Instalasi & Cara Menjalankan
+
+**1. Clone Repositori**
+```bash
+git clone https://github.com/Hafizh220705/data-mining-project.git
+cd data-mining-project
+```
+**2. Buat dan Aktifkan Virtual Environment**
+```bash
+# Buat environment
+python -m venv venv
+
+# Aktifkan di Windows
+venv\Scripts\activate
+
+# Aktifkan di macOS/Linux
+source venv/bin/activate
+```
+**3. Instal Dependensi**
+```bash
+pip install -r requirements.txt
+```
+
+**4. Siapkan Dataset**
+Unduh data hasil survei dari Google Sheets dalam format .xlsx dan siapkan untuk diunggah melalui antarmuka aplikasi.
+
+**5. Jalankan Aplikasi**
+```bash
+streamlit run app.py
+```
+Aplikasi akan terbuka otomatis di browser Anda.
+
+---
+### Metodologi
+Proyek ini mengikuti metodologi CRISP-DM yang mencakup:
+1. Business & Data Understanding – Merumuskan masalah kesejahteraan mahasiswa dan mengumpulkan data survei.
+2. Data Preparation – Melakukan cleaning, integrasi, dan transformasi pada tahap awal aplikasi.
+3. Modeling – Menerapkan K-Means, DBSCAN, dan Hierarchical Clustering interaktif di Streamlit.
+4. Evaluation – Menganalisis hasil dengan metrik seperti Silhouette Score dan interpretasi profil.
+5. Deployment – Menyajikan hasil analisis dalam aplikasi Streamlit lengkap dengan insight & rencana aksi.
+
+---
+### 👥 Anggota Tim
+
+| No | Nama Lengkap              | NPM          |
+|----|---------------------------|--------------|
+| 1  | David Christian Nathaniel | 140810230027 | 
+| 2  | Dzacky Ahmad              | 140810230043 |
+| 3  | Hafizh Fadhl Muhammad     | 140810230070 | 
+| 4  | Farhan Zia Rizky          | 140810230074 |
+| 5  | Gideon Tamba              | 140810230082 |

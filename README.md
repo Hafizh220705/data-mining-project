@@ -7,9 +7,11 @@
 
 ### Deskripsi Proyek
 
-Proyek ini bertujuan untuk mengaplikasikan konsep **Preprocessing** dan **Clustering** sebagai solusi inovatif berbasis data mining. Aplikasi ini dibangun untuk menganalisis data hasil survei mengenai tingkat kesejahteraan mahasiswa, mengelompokkannya ke dalam beberapa profil, dan menghasilkan rekomendasi kebijakan yang dapat ditindaklanjuti.
+Proyek ini bertujuan untuk mengaplikasikan konsep **Preprocessing** dan **Clustering** sebagai solusi inovatif berbasis data mining. Aplikasi ini dibangun untuk menganalisis data hasil survei mengenai tingkat kesejahteraan mahasiswa, mengelompokkannya ke dalam beberapa profil, dan menghasilkan rekomendasi kebijakan yang dapat ditindaklanjut.
 
 Sesuai dengan brief tugas, semua algoritma clustering utama (K-Means, DBSCAN) dan tahap preprocessing diimplementasikan secara manual (*from scratch*), hanya menggunakan library dasar seperti NumPy dan Pandas untuk manipulasi data. Aplikasi ini memiliki antarmuka pengguna interaktif yang dibangun menggunakan Streamlit.
+
+---
 
 ### Daftar Isi
 1. [Fitur Utama](#fitur-utama)
@@ -20,14 +22,54 @@ Sesuai dengan brief tugas, semua algoritma clustering utama (K-Means, DBSCAN) da
 6. [Anggota Tim](#anggota-tim)
 7. [Checklist Deliverables](#checklist-deliverables)
 
+---
+
 ### Fitur Utama
 
-* **Pipeline Preprocessing Lengkap**: Membersihkan data mentah, menangani nilai yang hilang, mendeteksi outlier, dan melakukan reduksi dimensi (PCA/UMAP).
-* **Implementasi Algoritma Clustering *From Scratch***:
-    * **K-Means**: Implementasi manual dengan inisialisasi K-Means++.
-    * **DBSCAN**: Implementasi manual untuk menemukan cluster dengan bentuk non-konvensional dan mendeteksi noise.
-* **Clustering Hirarkis**: Menggunakan `scipy.cluster` untuk analisis berbasis dendrogram.
-* **Visualisasi Interaktif**: Antarmuka berbasis Streamlit yang memungkinkan pengguna untuk memilih algoritma, menyesuaikan parameter secara *real-time*, dan melihat hasilnya secara langsung.
-* **Analisis Cluster Mendalam (Insight & Wisdom)**:
-    * Secara otomatis membuat profil dan ringkasan kualitatif untuk setiap cluster (misal: "Akademik Sejahtera | Psikologis Rendah").
-    * Menghasilkan rekomendasi kebijakan dan mengubahnya menjadi rencana aksi yang terstruktur, lengkap dengan KPI, penanggung jawab, dan estimasi biaya.
+- **Pipeline Preprocessing Lengkap**  
+  Alur kerja bertahap mulai dari mengunggah data, membersihkan (menangani nilai hilang & outlier), integrasi, transformasi (skor aspek & Z-score), reduksi dimensi (PCA/UMAP), hingga diskretisasi.
+- **Implementasi Algoritma Clustering *From Scratch***  
+  - **K-Means:** Implementasi manual dengan inisialisasi K-Means++.  
+  - **DBSCAN:** Implementasi manual untuk menemukan cluster dengan bentuk non-konvensional dan mendeteksi noise.  
+- **Clustering Hirarkis** menggunakan `scipy.cluster` untuk analisis berbasis dendrogram.  
+- **Visualisasi Interaktif** dengan Streamlit untuk memilih algoritma, menyesuaikan parameter, dan menampilkan hasil secara *real-time*.  
+- **Analisis Cluster Mendalam (Insight & Wisdom)**  
+  - Membuat profil kualitatif tiap cluster (misal: *"Akademik Sejahtera | Psikologis Rendah"*).  
+  - Menghasilkan rekomendasi kebijakan berupa rencana aksi dengan KPI, PIC, dan estimasi biaya yang dapat diekspor.
+
+---
+
+### Tampilan Aplikasi
+
+![Screenshot Tampilan Utama Aplikasi](https://i.imgur.com/your-screenshot-1.png "Tampilan Utama Aplikasi")  
+_Gambar 1: Halaman utama visualisasi clustering._
+
+![Screenshot Hasil Analisis](https://i.imgur.com/your-screenshot-2.png "Hasil Analisis Cluster")  
+_Gambar 2: Contoh tabel profil cluster dan rencana aksi yang dihasilkan._
+
+---
+
+### Struktur Proyek
+
+Proyek ini diorganisir dengan struktur modular untuk memisahkan logika preprocessing, visualisasi, dan aplikasi utama.
+
+```
+├── Visualisasi/
+│ ├── ClusterInsight.py # Analisis profil & rekomendasi
+│ ├── ClusterWisdom.py # Rencana aksi berbasis insight
+│ ├── DBSCAN_Visual.py # Implementasi manual DBSCAN & visualisasi
+│ ├── Hierarchical_Visual.py # Implementasi Hierarchical Clustering
+│ ├── KMeans_Visual.py # Implementasi manual K-Means & visualisasi
+│ └── Visualisasi.py # Controller UI halaman visualisasi
+│
+├── app.py # Entry point aplikasi Streamlit
+│
+├── DataCleaning.py # Modul pembersihan data
+├── DataDiscretization.py # Modul diskretisasi data
+├── DataIntegration.py # Modul integrasi data
+├── DataReduction.py # Modul reduksi dimensi (PCA/UMAP)
+├── DataTransformation.py # Modul transformasi data kuesioner
+│
+├── requirements.txt # Daftar library
+└── README.md # File dokumentasi ini
+```
